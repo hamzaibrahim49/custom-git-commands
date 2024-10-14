@@ -1,0 +1,19 @@
+#!/bin/bash
+
+current_branch=$(git symbolic-ref --short HEAD)
+
+git s
+git add .
+git s
+git commit --amend --no-edit
+git push --force-with-lease -u origin master
+
+# Check if the push was successful
+if [ $? -eq 0 ]; then
+    response="Changes successfully pushed!"
+	echo -e "\e[32m$response\e[0m"
+
+else
+	response="Failed to push changes!"
+    echo -e "\e[31m$response\e[0m"
+fi

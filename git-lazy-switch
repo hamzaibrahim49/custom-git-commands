@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Check if new branch name is provided
+if [ -z "$1" ]; then
+	response="No new branch name provided!"
+    echo -e "\e[31m$response\e[0m"
+    exit 1
+fi
+
+new_branch_name="$1"
+
+git s
+git stash
+git s
+git cout -b "$new_branch_name"
+git s
+git stash pop
+git s
+
+response="Switched to branch '$new_branch_name'!"
+echo -e "\e[32m$response\e[0m"

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Check if a commit message is provided
+if [ -z "$1" ]; then
+	response="No commit message provided!"
+    echo -e "\e[31m$response\e[0m"
+    exit 1
+fi
+
+commit_message="$1"
+current_branch=$(git symbolic-ref --short HEAD)
+
+git s
+git add .
+git s
+git commit -m "$commit_message"
+git push -u origin "$current_branch"
+
+# Check if the push was successful
+if [ $? -eq 0 ]; then
+    response="Changes successfully pushed!"
+	echo -e "\e[32m$response\e[0m"
+
+else
+	response="Failed to push changes!"
+    echo -e "\e[31m$response\e[0m"
+fi
