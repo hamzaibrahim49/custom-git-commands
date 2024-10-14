@@ -1,25 +1,48 @@
 # Custom Git Commands
 
 ## Description
+
 - These are some custom git commands
 - They automate some of the tedious commands developers use daily
 - They essentially package a few commands together for more efficient 'git'ing
 
 ## Setup
-- Put the parent directory in your PATH
--- Mac: export PATH="$HOME/Code/custom-git-commands:$PATH"
--- Windows: setx PATH "$env:PATH;$env:USERPROFILE\Code\custom-git-commands"
-- Restart your terminal
--- Mac: source ~/.zshrc
--- Windows: exit
+
+### Mac
+- Put the parent directory in your PATH:
+  ```
+  export PATH="$HOME/Code/custom-git-commands:$PATH"
+  ```
+- Restart your terminal:
+  ```
+  source ~/.zshrc
+  ```
+
+### Windows
+- Put the parent directory in your PATH:
+  ```
+  setx PATH "%PATH%;%USERPROFILE%\Code\custom-git-commands"
+  ```
+- Restart your terminal by closing and reopening it
 
 ## How to use
-- To run one of the commands you simply type out the file name with the arguments if necessary
--- Mac: git-lazy-push "This is a commit message"
--- Windows: git lazy-push "This is a commit message"
+
+To run one of the commands, simply type out the file name with the arguments if necessary:
+
+### Mac
+```
+git-lazy-push "This is a commit message"
+```
+
+### Windows
+```
+git lazy-push "This is a commit message"
+```
 
 ## Create your own
+
 - To create your own command follow the following steps:
+
 1. touch git-<your command name>
 2. chmod +x <above file>
 3. vim <file>
