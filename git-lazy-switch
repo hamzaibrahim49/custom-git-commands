@@ -3,8 +3,8 @@
 # Check if new branch name is provided
 if [ -z "$1" ]; then
 	response="No new branch name provided!"
-    echo -e "\e[31m$response\e[0m"
-    exit 1
+	echo -e "\033[31m$response\033[0m"
+	exit 1
 fi
 
 new_branch_name="$1"
