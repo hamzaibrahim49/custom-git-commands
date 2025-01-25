@@ -1,0 +1,19 @@
+#!/bin/bash
+
+current_branch=$(git symbolic-ref --short HEAD)
+
+git merge --abort
+git s
+git rall
+git s
+git reset --hard origin/$current_branch
+git s
+
+# Check if the reset was successful
+if [ $? -eq 0 ]; then
+	response="Reset successfully!"
+	echo -e "\033[32m$response\033[0m"
+else
+	response="Failed to reset!"
+	echo -e "\033[31m$response\033[0m"
+fi
