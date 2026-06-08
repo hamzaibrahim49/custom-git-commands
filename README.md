@@ -39,6 +39,15 @@ git-lazy-push "This is a commit message"
 git lazy-push "This is a commit message"
 ```
 
+## Git aliases
+
+- Short aliases for everyday commands, in `aliases.gitconfig`
+- Include them once, pointing at wherever you cloned this:
+  ```
+  git config --global include.path "$PWD/aliases.gitconfig"
+  ```
+- Git merges them with any aliases you already have
+
 ## Create your own
 
 - To create your own command follow the following steps:

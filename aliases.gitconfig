@@ -1,0 +1,14 @@
+[alias]
+	s = status
+	cout = checkout
+	cm = !git checkout main 2>/dev/null || git checkout master
+	dog = log --oneline --decorate --graph
+	dig = dog -1
+	pom = !git pull origin main 2>/dev/null || git pull origin master
+	st = stash
+	stp = stash pop
+	stc = stash clear
+	sts = stash show
+	rall = restore .
+	linecountall = !git ls-files | xargs wc -l
+	linecount = !git ls-files | grep -vE '\\.json$|\\.ttf$' | xargs wc -l
